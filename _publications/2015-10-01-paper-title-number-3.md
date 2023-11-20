@@ -2,7 +2,7 @@
 title: "Towards Accurate Chest X-ray Disease Detection: A Comparative Study of CNN architectures and Image Transformation Approaches, with Emphasis on CLAHE"
 collection: publications
 permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
+excerpt: 'This work explores CNN architectures and Image Transformation Techniques in Chest X-Ray Disease Detection'
 date: 2023-11-30
 venue: ''
 paperurl: 'http://academicpages.github.io/files/paper3.pdf'

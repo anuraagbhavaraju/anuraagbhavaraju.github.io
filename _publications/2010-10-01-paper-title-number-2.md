@@ -1,15 +1,18 @@
 ---
-title: "Paper Title Number 2"
+title: "Talk to your data: Enhancing Business Intelligence and Inventory Management with LLM-Driven Semantic Parsing and Text-to-SQL for Database Querying"
 collection: publications
 permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+excerpt: 'This paper evaluates various LLMs and Test-to-SQL parsing frameworks that can enhance Business Intelligence'
 date: 2010-10-01
-venue: 'Journal 1'
+venue: 'International Conference on Data Analytics for Business and Industry'
 paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+citation: 'Zhu, J., Bazaz, S. A., Dutta, S., Anuraag, B., Haider, I., Bandopadhyay, S., (2023). &quot;Talk to your data: Enhancing Business Intelligence and Inventory Management with LLM-Driven Semantic Parsing and Text-to-SQL for Database Querying .&quot; <i>International Conference on Data Analytics for Business and Industry</i>. 1(2).'
 ---
-This paper is about the number 2. The number 3 is left for future work.
+Abstract—This research paper explores the transforma tive potential of Large Language Models (LLMs) in the context of business intelligence and inventory management through semantic parsing and Text-to-SQL methodologies. The study conducts extensive evaluations of various mod els, including DIN-SQL, DSP, NSQL, GPT, CoPilot, and LLaMa, shedding light on their capabilities and contri butions to this domain. Here, results from two analyses have been presented. The first compares state-of-the-art LLM models using metrics like cosine similarity and cost considerations. CoPilot stands out for its cost-effectiveness and accuracy. In contrast, open-source models exhibit varying performance and infrastructure requirements. The analysis also highlights the significance of prompting in model performance. The second analysis focuses on improving GPT’s accuracy through prompt engineering like few-shot, exploring frameworks like DIN-SQL NSQL, and DSP. DIN-SQL demonstrates a substantial accuracy boost, while NSQL shows favourable potential in certain scenarios. This study showcases the potential of LLM driven models to revolutionize business intelligence and inventory management. DIN-SQL emerges as a stand out performer, promising a paradigm shift in inventory management practices. GPT exhibits versatile capabilities through fine tuning beyond traditional programming tasks, and CoPilot offers a cost-effective alternative. This re search also emphasizes the importance of cost-effectiveness in real-world implementations, with LLaMa and CoPilot emerging as practical choices. NSQL provides a budget friendly, semi-accurate solution, particularly suited for semantic parsing in growing companies. In summary, this research provides a comprehensive overview of the advancements facilitated by LLM-driven semantic parsing and Text-to-SQL capabilities. These insights serve as a foundation for further innovation, promising unparalleled efficiency and competitiveness across industries in the evolving AI landscape. 
 
-[Download paper here](http://academicpages.github.io/files/paper2.pdf)
+Index Terms—Semantic parsing, Text to SQL, Struc tured Query Language, Large Language Models, Natural Language Processing, Business Intelligence
 
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).
+
+[Download paper here](http://academicpages.github.io/files/Talk to Your Data.pdf)
+
+Recommended citation: Zhu, J., Bazaz, S. A., Dutta, S., Anuraag, B., Haider, I., Bandopadhyay, S. (2023). "Talk to your data: Enhancing Business Intelligence and Inventory Management with LLM-Driven Semantic Parsing and Text-to-SQL for Database Querying." <i>International Conference on Data Analytics for Business and Industry</i>. 1(2).
