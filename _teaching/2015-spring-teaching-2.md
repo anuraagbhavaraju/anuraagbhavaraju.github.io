@@ -1,16 +1,28 @@
 ---
-title: "ML Engineering Consultant"
+title: "Lead Machine Learning Engineer"
 collection: teaching
 type: "Tredence Inc."
-permalink: /teaching/2014-spring-teaching-1
+permalink: /teaching/2015-spring-teaching-2
 venue: "Bengaluru"
-date: 2022-06-01
+date: 2025-08-09
 location: "Bengaluru, India"
 ---
-In my current role as a Machine Learning Engineering Consultant, I have had the privilege of spearheading the development of sophisticated intelligent systems for Fortune 500 companies. [Click here](/teaching/2014-spring-teaching-1) to read more
+In my latest role, I spearheaded research and innovation with emerging AI technologies by building reusable
+capabilities, collaborating with product teams to architect state-of-the-art AI solutions and enabling
+delivery teams accelerate execution.
 
 Projects
 ======
+
+[TREK - Tredence Repository of Knowledge](https://www.tredence.com/services/generative-ai)
+------
+TReK (Tredence Repository of Knowledge) is an AI-powered enterprise search solution that is a central hub for accessing essential documents related to various aspects of the organization. It provides a comprehensive reference and understanding of work, making project initiation easier.
+
+Contributions
+------
+- Led the Data Science pod in a architecting scalable and production-grade AI solution, collaborating cross-functionally with product owners, developers, and business stakeholders
+- Engineered a multi-modal Retrieval-Augmented Generation (RAG) framework, integrating text, structured data, and visual modalities to enable contextual enterprise search and high-precision knowledge retrieval.
+- Advanced the RAG system by incorporating Agentic AI architectures, enabling autonomous task orchestration, dynamic reasoning, and adaptive knowledge flow across enterprise functions.
 
 [TALP - Test and Learn Platform](https://www.tredence.com/solutions/test-and-learn-platform)
 ------
@@ -20,7 +32,7 @@ The Test and Learn Platform (TALP) is a comprehensive solution addressing enterp
 
 Contributions
 ------
-- Currently developing large-scale Causal Inference models to capture the significant differences in outcomes across the test and control groups, which occur between pre-treatment and post-treatment periods
+- Developed large-scale Causal Inference models to capture the significant differences in outcomes across the test and control groups, which occur between pre-treatment and post-treatment periods
 of a marketing campaign
 - Developed an anomaly detection model using Isolation Forest algorithm to identify and treat anomalies at the store and customer level in calculating key KPIs with improved results using a bi-dimensional
 approach
