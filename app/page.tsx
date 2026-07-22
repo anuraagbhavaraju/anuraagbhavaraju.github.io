@@ -236,7 +236,7 @@ export default function Home() {
 
       <section id="top" className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">AI/ML engineer · Applied researcher · Singapore</p>
+          <p className="eyebrow">AI/ML engineer | Applied researcher | Singapore</p>
           <h1>Building enterprise and healthcare AI systems that move from research to measurable impact.</h1>
           <p className="hero-lede">
             I am Anuraag Bhavaraju, an M.Tech student at the National University of Singapore and an AI/ML
@@ -323,7 +323,7 @@ export default function Home() {
           {experience.map((job) => (
             <article className="experience-row" key={`${job.company}-${job.role}`}>
               <div>
-                <p className="role-meta">{job.period} · {job.location}</p>
+                <p className="role-meta">{job.period} - {job.location}</p>
                 <h3>{job.role}</h3>
                 <strong>{job.company}</strong>
               </div>
