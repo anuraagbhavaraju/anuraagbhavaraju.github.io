@@ -34,6 +34,10 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /Paulo Coelho, The Alchemist/);
   assert.match(html, /\/images\/anuraag-hero\.jpeg/);
   assert.match(html, /Anuraag Bhavaraju reading at a cafe/);
+  assert.match(html, /About me/);
+  assert.match(html, /over 8 years of/);
+  assert.match(html, /Fortune 500/);
+  assert.match(html, /book cafe :D/);
   assert.match(html, /Selected work/);
   assert.match(html, /Selected research/);
   assert.match(html, /Academic path behind the work/);
@@ -44,7 +48,13 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /100%/);
   assert.match(html, /90%/);
   assert.match(html, /anuraag-bhavaraju-resume\.pdf/);
+  assert.doesNotMatch(html, /My work sits where machine learning, analytics, and practical decision systems meet/);
+  assert.doesNotMatch(html, /Beyond work|Curious by habit/);
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/i);
+
+  assert.ok(html.indexOf("About me") < html.indexOf("01 - Story"));
+  assert.ok(html.indexOf("Impact metrics") > html.indexOf("Awards and organisations"));
+  assert.ok(html.indexOf("Impact metrics") < html.indexOf("07 - Connect"));
 });
 
 test("keeps portfolio assets and removes starter preview scaffolding", async () => {
@@ -57,7 +67,10 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.match(page, /const selectedWork = \[/);
   assert.match(page, /const selectedResearch = \[/);
   assert.match(page, /hero-quote/);
+  assert.match(page, /about-section/);
+  assert.match(page, /bottom-metrics/);
   assert.doesNotMatch(page, /Building enterprise and healthcare AI systems that move from research to measurable impact/);
+  assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work/);
   assert.match(page, /portrait-frame/);
   assert.match(page, /story-layout/);
   assert.match(page, /story-education/);

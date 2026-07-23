@@ -225,6 +225,7 @@ export default function Home() {
           AB
         </a>
         <div className="nav-links">
+          <a href="#about">About</a>
           <a href="#story">Story</a>
           <a href="#experience">Experience</a>
           <a href="#work">Work</a>
@@ -247,11 +248,6 @@ export default function Home() {
             </p>
             <cite>Paulo Coelho, The Alchemist</cite>
           </blockquote>
-          <p className="hero-lede">
-            I am Anuraag Bhavaraju, an M.Tech student at the National University of Singapore and an AI/ML
-            intern at Singapore General Hospital. My work sits where machine learning, analytics, and
-            practical decision systems meet.
-          </p>
           <div className="hero-actions" aria-label="Primary actions">
             <a className="button primary-button" href="#work">View selected work</a>
             <a className="button secondary-button" href="mailto:e1583176@u.nus.edu">Contact me</a>
@@ -275,17 +271,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="metrics-band" aria-labelledby="impact-title">
-        <div className="section-kicker">Impact metrics</div>
-        <h2 id="impact-title">Proof points from the latest resume</h2>
-        <div className="metrics-grid">
-          {metrics.map((metric) => (
-            <article className="metric-card" key={metric.label}>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-              <p>{metric.detail}</p>
-            </article>
-          ))}
+      <section id="about" className="content-section about-section">
+        <div className="section-heading">
+          <p className="section-kicker">About me</p>
+          <h2>Applied ML, enterprise analytics, research curiosity, and coffee-fueled conversations.</h2>
+        </div>
+        <div className="about-copy">
+          <p>
+            I am currently a MTech student at National University of Singapore with over 8 years of
+            experience as Senior Data Scientist at Tredence Inc., Bengaluru. in building enterprise-scale
+            machine learning models, furnishing insights, providing analytical solutions and business
+            intelligence to guide impactful data driven decisions. I have consulted numerous Fortune 500
+            companies like Unilever, Sysco Foods, American Eagle etc.
+          </p>
+          <p>
+            I am also an independent Applied ML Researcher collaborating with scholars across the globe
+            transforming state-of-the-art research in Machine Learning into solutions designed to tackle
+            problems across health-care, business intelligence, cyber-security etc.
+          </p>
+          <p>
+            I travel to explore stories, food and culture. I am of that kind who goes to trips without a
+            planned return ticket. During my free times, I am glued to books like a bookish gecko with
+            library obsession. I am always up for conversations related to Art, AI and Philosophy
+            preferably over coffee, extra preferably at a book cafe :D
+          </p>
         </div>
       </section>
 
@@ -421,21 +430,18 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="content-section beyond-section">
-        <div className="beyond-copy">
-          <p className="section-kicker">Beyond work</p>
-          <h2>Curious by habit, systems-minded by training.</h2>
-          <p>
-            I travel for stories, food, and culture. I am often found around books, coffee, and
-            conversations about art, AI, and philosophy. That curiosity shapes how I build: with
-            attention to people, context, and the decisions a model is meant to improve.
-          </p>
+      <section className="metrics-band bottom-metrics" aria-labelledby="impact-title">
+        <div className="section-kicker">Impact metrics</div>
+        <h2 id="impact-title">Proof points from the latest resume</h2>
+        <div className="metrics-grid">
+          {metrics.map((metric) => (
+            <article className="metric-card" key={metric.label}>
+              <strong>{metric.value}</strong>
+              <span>{metric.label}</span>
+              <p>{metric.detail}</p>
+            </article>
+          ))}
         </div>
-        <blockquote>
-          "We have stopped for a moment to encounter each other, to meet, to love, to share. This is a
-          precious moment."
-          <cite>Paulo Coelho, The Alchemist</cite>
-        </blockquote>
       </section>
 
       <section id="contact" className="contact-section">
