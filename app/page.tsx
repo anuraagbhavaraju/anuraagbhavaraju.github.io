@@ -23,34 +23,67 @@ const metrics = [
 
 const timeline = [
   {
-    year: "2018",
-    title: "Engineering foundation",
-    body: "Completed electronics and communication engineering at VIT and began building automation systems at Wipro.",
+    marker: "2018",
+    period: "Jul 2014 - Apr 2018",
+    category: "Education",
+    title: "Vellore Institute of Technology",
+    organisation: "B.Tech in Electronics and Communication",
+    location: "Vellore, India",
+    body: "Graduated with an engineering foundation that later shaped my work in automation, analytics, and machine learning systems.",
   },
   {
-    year: "2020",
-    title: "Enterprise ML at scale",
-    body: "Joined Tredence and grew into a senior data science role solving analytics and AI problems for Fortune 500 teams.",
+    marker: "2018",
+    period: "Aug 2018 - Feb 2021",
+    category: "Work Experience",
+    title: "Wipro Technologies",
+    organisation: "Project Engineer",
+    location: "Chennai, India",
+    body: "Reduced workflow validation time by 87% by developing and maintaining a regression automation suite for complex computational logic and workflows.",
   },
   {
-    year: "2022",
-    title: "Business analytics lens",
-    body: "Completed ISB's Advanced Management Programme in Business Analytics and sharpened the bridge between models and decisions.",
+    marker: "2020",
+    period: "Mar 2020 - Aug 2025",
+    category: "Work Experience",
+    title: "Tredence Inc.",
+    organisation: "Senior Data Scientist, Associate Manager",
+    location: "Bengaluru, India",
+    body: "Led enterprise AI and analytics systems across knowledge management, autonomous data modelling, and customer intelligence for large-scale business impact.",
   },
   {
-    year: "2024",
-    title: "Applied research",
-    body: "Worked with IIT Delhi's MISN Lab on hyperbolic graph ML and privacy-preserving distributed graph learning.",
+    marker: "2022",
+    period: "Aug 2020 - Aug 2022",
+    category: "Education",
+    title: "Indian School of Business",
+    organisation: "Advanced Management Programme in Business Analytics",
+    location: "India",
+    body: "Built a stronger business analytics lens for connecting models, insights, and data-driven decisions.",
   },
   {
-    year: "2025",
-    title: "NUS, Singapore",
-    body: "Started M.Tech in Enterprise Business Analytics at the National University of Singapore.",
+    marker: "2024",
+    period: "Jul 2024 - Dec 2024",
+    category: "Research Experience",
+    title: "Indian Institute of Technology Delhi",
+    organisation: "Research Associate / Intern, MISN Lab",
+    location: "Delhi, India",
+    body: "Worked on hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
   },
   {
-    year: "2026",
-    title: "Healthcare AI",
-    body: "Building AI/ML systems at Singapore General Hospital for proactive clinical risk management.",
+    marker: "2025",
+    period: "Aug 2025 - Aug 2026",
+    category: "Education",
+    title: "National University of Singapore",
+    organisation: "M.Tech in Enterprise Business Analytics",
+    location: "Singapore",
+    body: "Pursuing graduate study in enterprise business analytics with a focus on AI, ML, and applied decision systems.",
+  },
+  {
+    marker: "2026",
+    period: "Jan 2026 - Present",
+    category: "Work Experience",
+    title: "Singapore General Hospital",
+    organisation: "AI/ML Intern",
+    location: "Singapore",
+    body: "Architecting LLM and RLHF-backed clinical risk decision systems while applying statistical models for proactive clinical incident management.",
   },
 ];
 
@@ -202,12 +235,6 @@ const skillGroups = [
   },
 ];
 
-const education = [
-  "M.Tech in Enterprise Business Analytics, National University of Singapore",
-  "Advanced Management Programme in Business Analytics, Indian School of Business",
-  "B.Tech in Electronics and Communication, Vellore Institute of Technology",
-];
-
 const recognition = [
   "Winner - Best Innovation, MIT Hacking Medicine",
   "Best Capstone Project, Indian School of Business",
@@ -297,30 +324,25 @@ export default function Home() {
       <section id="story" className="content-section story-section">
         <div className="section-heading">
           <p className="section-kicker">01 - Story</p>
-          <h2>From automation to enterprise AI to healthcare decision systems.</h2>
+          <h2>A chronological path through education, work, and applied research.</h2>
         </div>
         <div className="story-layout">
           <div className="timeline">
             {timeline.map((item) => (
-              <article className="timeline-item" key={`${item.year}-${item.title}`}>
-                <div className="timeline-marker" aria-hidden="true">{item.year.slice(2)}</div>
-                <div>
-                  <span>{item.year}</span>
+              <article className="timeline-item" key={`${item.period}-${item.title}`}>
+                <div className="timeline-marker" aria-hidden="true">{item.marker}</div>
+                <div className="timeline-content">
+                  <div className="timeline-meta">
+                    <span>{item.period}</span>
+                    <span>{item.category}</span>
+                  </div>
                   <h3>{item.title}</h3>
+                  <p className="timeline-org">{item.organisation} - {item.location}</p>
                   <p>{item.body}</p>
                 </div>
               </article>
             ))}
           </div>
-          <aside className="story-education" aria-labelledby="story-education-title">
-            <p className="section-kicker">Education</p>
-            <h3 id="story-education-title">Academic path behind the work.</h3>
-            <ul>
-              {education.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </aside>
         </div>
       </section>
 

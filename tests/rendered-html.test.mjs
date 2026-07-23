@@ -48,8 +48,15 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /book cafe :D/);
   assert.match(html, /Selected work/);
   assert.match(html, /Selected research/);
-  assert.match(html, /Academic path behind the work/);
+  assert.match(html, /A chronological path through education, work, and applied research/);
+  assert.match(html, /Vellore Institute of Technology/);
+  assert.match(html, /Wipro Technologies/);
+  assert.match(html, /Tredence Inc/);
+  assert.match(html, /Indian School of Business/);
+  assert.match(html, /Indian Institute of Technology Delhi/);
+  assert.match(html, /Research Associate \/ Intern, MISN Lab/);
   assert.match(html, /M\.Tech in Enterprise Business Analytics/);
+  assert.match(html, /Singapore General Hospital/);
   assert.match(html, /Clinical Risk Decision Acceleration/);
   assert.match(html, /Occupational Burnout Estimation/);
   assert.match(html, /75%/);
@@ -82,7 +89,9 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work|portrait-caption/);
   assert.match(page, /portrait-frame/);
   assert.match(page, /story-layout/);
-  assert.match(page, /story-education/);
+  assert.match(page, /timeline-meta/);
+  assert.match(page, /timeline-org/);
+  assert.doesNotMatch(page, /story-education|Academic path behind the work/);
   assert.match(page, /proof-status/);
   assert.doesNotMatch(page, /signal-panel|system-map|map-node|Decision system/);
   assert.match(layout, /openGraph:/);
