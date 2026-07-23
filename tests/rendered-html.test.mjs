@@ -31,8 +31,12 @@ test("server-renders the AI portfolio homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Anuraag Bhavaraju - AI\/ML Engineer<\/title>/i);
   assert.match(html, /Building enterprise and healthcare AI systems/);
+  assert.match(html, /\/images\/anuraag-hero\.jpeg/);
+  assert.match(html, /Anuraag Bhavaraju reading at a cafe/);
   assert.match(html, /Selected work/);
   assert.match(html, /Selected research/);
+  assert.match(html, /Academic path behind the work/);
+  assert.match(html, /M\.Tech in Enterprise Business Analytics/);
   assert.match(html, /Clinical Risk Decision Acceleration/);
   assert.match(html, /Occupational Burnout Estimation/);
   assert.match(html, /75%/);
@@ -51,7 +55,11 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
 
   assert.match(page, /const selectedWork = \[/);
   assert.match(page, /const selectedResearch = \[/);
+  assert.match(page, /portrait-frame/);
+  assert.match(page, /story-layout/);
+  assert.match(page, /story-education/);
   assert.match(page, /proof-status/);
+  assert.doesNotMatch(page, /signal-panel|system-map|map-node|Decision system/);
   assert.match(layout, /openGraph:/);
   assert.match(layout, /\/og\.png/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
@@ -59,6 +67,7 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.doesNotMatch(layout, /Starter Project|codex-preview/);
 
   await access(new URL("../public/og.png", import.meta.url));
+  await access(new URL("../public/images/anuraag-hero.jpeg", import.meta.url));
   await access(new URL("../public/files/anuraag-bhavaraju-resume.pdf", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview/SkeletonPreview.tsx", import.meta.url)));
   await assert.rejects(access(new URL("../app/_sites-preview/preview.css", import.meta.url)));

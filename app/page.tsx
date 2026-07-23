@@ -255,30 +255,12 @@ export default function Home() {
             <span>Applied research</span>
           </div>
         </div>
-        <div className="hero-visual" aria-label="AI systems impact map">
-          <div className="signal-panel">
-            <div className="panel-topline">
-              <span>Decision system</span>
-              <strong>online</strong>
-            </div>
-            <div className="system-map">
-              <div className="map-node node-source">Data</div>
-              <div className="map-node node-model">Models</div>
-              <div className="map-node node-human">Experts</div>
-              <div className="map-node node-impact">Impact</div>
-              <div className="map-line line-one" />
-              <div className="map-line line-two" />
-              <div className="map-line line-three" />
-            </div>
-            <div className="panel-metrics">
-              <div>
-                <span>Screening time</span>
-                <strong>-75%</strong>
-              </div>
-              <div>
-                <span>Search time</span>
-                <strong>-90%</strong>
-              </div>
+        <div className="hero-visual" aria-label="Portrait of Anuraag Bhavaraju">
+          <div className="portrait-frame">
+            <img src="/images/anuraag-hero.jpeg" alt="Anuraag Bhavaraju reading at a cafe" />
+            <div className="portrait-caption">
+              <span>Singapore</span>
+              <strong>AI/ML | books | coffee</strong>
             </div>
           </div>
         </div>
@@ -303,14 +285,28 @@ export default function Home() {
           <p className="section-kicker">01 - Story</p>
           <h2>From automation to enterprise AI to healthcare decision systems.</h2>
         </div>
-        <div className="timeline">
-          {timeline.map((item) => (
-            <article className="timeline-item" key={`${item.year}-${item.title}`}>
-              <span>{item.year}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
+        <div className="story-layout">
+          <div className="timeline">
+            {timeline.map((item) => (
+              <article className="timeline-item" key={`${item.year}-${item.title}`}>
+                <div className="timeline-marker" aria-hidden="true">{item.year.slice(2)}</div>
+                <div>
+                  <span>{item.year}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <aside className="story-education" aria-labelledby="story-education-title">
+            <p className="section-kicker">Education</p>
+            <h3 id="story-education-title">Academic path behind the work.</h3>
+            <ul>
+              {education.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </section>
 
@@ -403,27 +399,17 @@ export default function Home() {
 
       <section className="content-section credentials-section">
         <div className="section-heading">
-          <p className="section-kicker">06 - Education and recognition</p>
-          <h2>Academic depth, delivery credibility, and community leadership.</h2>
+          <p className="section-kicker">06 - Recognition</p>
+          <h2>Delivery credibility, awards, and community leadership.</h2>
         </div>
-        <div className="split-lists">
-          <article>
-            <h3>Education</h3>
-            <ul>
-              {education.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-          <article>
-            <h3>Awards and organisations</h3>
-            <ul>
-              {recognition.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        </div>
+        <article className="recognition-panel">
+          <h3>Awards and organisations</h3>
+          <ul>
+            {recognition.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
       </section>
 
       <section className="content-section beyond-section">
