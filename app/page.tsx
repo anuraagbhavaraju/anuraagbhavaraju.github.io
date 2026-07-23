@@ -237,7 +237,16 @@ export default function Home() {
       <section id="top" className="hero-section">
         <div className="hero-copy">
           <p className="eyebrow">AI/ML engineer | Applied researcher | Singapore</p>
-          <h1>Building enterprise and healthcare AI systems that move from research to measurable impact.</h1>
+          <h1 className="sr-only">Anuraag Bhavaraju - AI/ML engineer and applied researcher</h1>
+          <blockquote className="hero-quote">
+            <p>
+              &ldquo;We are travelers on a cosmic journey, stardust, swirling and dancing in the
+              eddies and whirlpools of infinity. Life is eternal. We have stopped for a moment
+              to encounter each other, to meet, to love, to share. This is a precious moment. It
+              is a little parenthesis in eternity.&rdquo;
+            </p>
+            <cite>Paulo Coelho, The Alchemist</cite>
+          </blockquote>
           <p className="hero-lede">
             I am Anuraag Bhavaraju, an M.Tech student at the National University of Singapore and an AI/ML
             intern at Singapore General Hospital. My work sits where machine learning, analytics, and

@@ -30,7 +30,8 @@ test("server-renders the AI portfolio homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Anuraag Bhavaraju - AI\/ML Engineer<\/title>/i);
-  assert.match(html, /Building enterprise and healthcare AI systems/);
+  assert.match(html, /travelers on a cosmic journey/);
+  assert.match(html, /Paulo Coelho, The Alchemist/);
   assert.match(html, /\/images\/anuraag-hero\.jpeg/);
   assert.match(html, /Anuraag Bhavaraju reading at a cafe/);
   assert.match(html, /Selected work/);
@@ -55,6 +56,8 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
 
   assert.match(page, /const selectedWork = \[/);
   assert.match(page, /const selectedResearch = \[/);
+  assert.match(page, /hero-quote/);
+  assert.doesNotMatch(page, /Building enterprise and healthcare AI systems that move from research to measurable impact/);
   assert.match(page, /portrait-frame/);
   assert.match(page, /story-layout/);
   assert.match(page, /story-education/);
