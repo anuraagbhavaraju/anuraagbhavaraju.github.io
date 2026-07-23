@@ -34,6 +34,14 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /Paulo Coelho, The Alchemist/);
   assert.match(html, /\/images\/anuraag-hero\.jpeg/);
   assert.match(html, /Anuraag Bhavaraju reading at a cafe/);
+  assert.match(html, /Currently Involved In:/);
+  assert.match(html, /LLM Reasoning/);
+  assert.match(html, /AI for Healthcare/);
+  assert.match(html, /Applied AI Research/);
+  assert.match(html, /Quantum Algorithms/);
+  assert.match(html, /View Selected Work/);
+  assert.match(html, /Contact Me/);
+  assert.doesNotMatch(html, /AI\/ML \| books \| coffee/);
   assert.match(html, /About me/);
   assert.match(html, /over 8 years of/);
   assert.match(html, /Fortune 500/);
@@ -69,8 +77,9 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.match(page, /hero-quote/);
   assert.match(page, /about-section/);
   assert.match(page, /bottom-metrics/);
+  assert.match(page, /tag-title/);
   assert.doesNotMatch(page, /Building enterprise and healthcare AI systems that move from research to measurable impact/);
-  assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work/);
+  assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work|portrait-caption/);
   assert.match(page, /portrait-frame/);
   assert.match(page, /story-layout/);
   assert.match(page, /story-education/);

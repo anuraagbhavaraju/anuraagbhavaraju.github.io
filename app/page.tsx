@@ -248,25 +248,21 @@ export default function Home() {
             </p>
             <cite>Paulo Coelho, The Alchemist</cite>
           </blockquote>
-          <div className="hero-actions" aria-label="Primary actions">
-            <a className="button primary-button" href="#work">View selected work</a>
-            <a className="button secondary-button" href="mailto:e1583176@u.nus.edu">Contact me</a>
-          </div>
+          <p className="tag-title">Currently Involved In:</p>
           <div className="proof-strip" aria-label="Professional focus areas">
-            <span>LLMs</span>
-            <span>RAG</span>
-            <span>Healthcare AI</span>
-            <span>Enterprise ML</span>
-            <span>Applied research</span>
+            <span>LLM Reasoning</span>
+            <span>AI for Healthcare</span>
+            <span>Applied AI Research</span>
+            <span>Quantum Algorithms</span>
+          </div>
+          <div className="hero-actions" aria-label="Primary actions">
+            <a className="button primary-button" href="#work">View Selected Work</a>
+            <a className="button secondary-button" href="mailto:e1583176@u.nus.edu">Contact Me</a>
           </div>
         </div>
         <div className="hero-visual" aria-label="Portrait of Anuraag Bhavaraju">
           <div className="portrait-frame">
             <img src="/images/anuraag-hero.jpeg" alt="Anuraag Bhavaraju reading at a cafe" />
-            <div className="portrait-caption">
-              <span>Singapore</span>
-              <strong>AI/ML | books | coffee</strong>
-            </div>
           </div>
         </div>
       </section>
