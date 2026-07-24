@@ -438,34 +438,16 @@ h3 {
 }
 
 .experience-list {
-  position: relative;
   display: grid;
-  gap: 0;
-}
-
-.experience-list::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  bottom: 24px;
-  left: calc(36% + 38px);
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(201, 79, 61, 0.08),
-    rgba(201, 79, 61, 0.44),
-    rgba(201, 79, 61, 0.08)
-  );
+  gap: 12px;
 }
 
 .experience-row {
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(220px, 36%) 28px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
-  padding: 28px 0;
-  border-top: 1px solid rgba(22, 22, 22, 0.1);
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: 34px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(22, 22, 22, 0.12);
 }
 
 .experience-row:first-child {
@@ -479,24 +461,6 @@ h3 {
 
 .experience-row strong {
   color: var(--blue);
-}
-
-.experience-marker {
-  position: relative;
-  z-index: 1;
-  width: 13px;
-  height: 13px;
-  margin: 6px auto 0;
-  border: 2px solid var(--coral);
-  background: var(--background);
-  box-shadow: 0 0 0 8px var(--background);
-}
-
-.experience-marker::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  background: var(--coral);
 }
 
 .experience-row ul,
@@ -638,29 +602,6 @@ h3 {
   .experience-row,
   .contact-section {
     grid-template-columns: 1fr;
-  }
-
-  .experience-list::before {
-    left: 6px;
-  }
-
-  .experience-row {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 18px;
-  }
-
-  .experience-row > div {
-    grid-column: 2;
-  }
-
-  .experience-marker {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    margin-top: 8px;
-  }
-
-  .experience-row ul {
-    grid-column: 2;
   }
 
   .metrics-grid,

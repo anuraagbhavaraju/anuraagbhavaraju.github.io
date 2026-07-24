@@ -33,15 +33,6 @@ const experience = [
     ],
   },
   {
-    role: "Research Associate / Intern",
-    company: "IIT Delhi, MISN Lab",
-    period: "Jul 2024 - Dec 2024",
-    location: "Delhi, India",
-    highlights: [
-      "Researched hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
-    ],
-  },
-  {
     role: "Senior Data Scientist, Associate Manager",
     company: "Tredence Inc.",
     period: "Mar 2020 - Aug 2025",
@@ -49,6 +40,15 @@ const experience = [
     highlights: [
       "Led enterprise AI systems across knowledge management, data modelling, and customer intelligence.",
       "Worked with delivery and product teams to convert emerging AI capabilities into reusable accelerators.",
+    ],
+  },
+  {
+    role: "Research Associate / Intern",
+    company: "IIT Delhi, MISN Lab",
+    period: "Jul 2024 - Dec 2024",
+    location: "Delhi, India",
+    highlights: [
+      "Researched hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
     ],
   },
   {
@@ -267,7 +267,6 @@ export default function Home() {
                 <h3>{job.role}</h3>
                 <strong>{job.company}</strong>
               </div>
-              <span className="experience-marker" aria-hidden="true" />
               <ul>
                 {job.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>

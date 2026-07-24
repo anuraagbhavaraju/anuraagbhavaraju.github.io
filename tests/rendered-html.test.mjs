@@ -66,9 +66,10 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/i);
 
   assert.ok(html.indexOf("About me") < html.indexOf("01 - Experience"));
-  assert.ok(html.indexOf("Jan 2026 - Present") < html.indexOf("Jul 2024 - Dec 2024"));
-  assert.ok(html.indexOf("Jul 2024 - Dec 2024") < html.indexOf("Mar 2020 - Aug 2025"));
+  assert.ok(html.indexOf("Jan 2026 - Present") < html.indexOf("Mar 2020 - Aug 2025"));
   assert.ok(html.indexOf("Mar 2020 - Aug 2025") < html.indexOf("Aug 2018 - Feb 2021"));
+  assert.ok(html.indexOf("Senior Data Scientist") < html.indexOf("Research Associate"));
+  assert.ok(html.indexOf("Research Associate") < html.indexOf("Project Engineer"));
   assert.ok(html.indexOf("Impact metrics") > html.indexOf("Awards and organisations"));
   assert.ok(html.indexOf("Impact metrics") < html.indexOf("06 - Connect"));
 });
@@ -89,8 +90,7 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.doesNotMatch(page, /Building enterprise and healthcare AI systems that move from research to measurable impact/);
   assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work|portrait-caption/);
   assert.match(page, /portrait-frame/);
-  assert.match(page, /experience-marker/);
-  assert.doesNotMatch(page, /story-layout|timeline-meta|timeline-org|story-education|Academic path behind the work/);
+  assert.doesNotMatch(page, /experience-marker|story-layout|timeline-meta|timeline-org|story-education|Academic path behind the work/);
   assert.match(page, /proof-status/);
   assert.doesNotMatch(page, /signal-panel|system-map|map-node|Decision system/);
   assert.match(layout, /openGraph:/);
