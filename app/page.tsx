@@ -21,72 +21,6 @@ const metrics = [
   },
 ];
 
-const timeline = [
-  {
-    marker: "2018",
-    period: "Jul 2014 - Apr 2018",
-    category: "Education",
-    title: "Vellore Institute of Technology",
-    organisation: "B.Tech in Electronics and Communication",
-    location: "Vellore, India",
-    body: "Graduated with an engineering foundation that later shaped my work in automation, analytics, and machine learning systems.",
-  },
-  {
-    marker: "2018",
-    period: "Aug 2018 - Feb 2021",
-    category: "Work Experience",
-    title: "Wipro Technologies",
-    organisation: "Project Engineer",
-    location: "Chennai, India",
-    body: "Reduced workflow validation time by 87% by developing and maintaining a regression automation suite for complex computational logic and workflows.",
-  },
-  {
-    marker: "2020",
-    period: "Mar 2020 - Aug 2025",
-    category: "Work Experience",
-    title: "Tredence Inc.",
-    organisation: "Senior Data Scientist, Associate Manager",
-    location: "Bengaluru, India",
-    body: "Led enterprise AI and analytics systems across knowledge management, autonomous data modelling, and customer intelligence for large-scale business impact.",
-  },
-  {
-    marker: "2022",
-    period: "Aug 2020 - Aug 2022",
-    category: "Education",
-    title: "Indian School of Business",
-    organisation: "Advanced Management Programme in Business Analytics",
-    location: "India",
-    body: "Built a stronger business analytics lens for connecting models, insights, and data-driven decisions.",
-  },
-  {
-    marker: "2024",
-    period: "Jul 2024 - Dec 2024",
-    category: "Research Experience",
-    title: "Indian Institute of Technology Delhi",
-    organisation: "Research Associate / Intern, MISN Lab",
-    location: "Delhi, India",
-    body: "Worked on hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
-  },
-  {
-    marker: "2025",
-    period: "Aug 2025 - Aug 2026",
-    category: "Education",
-    title: "National University of Singapore",
-    organisation: "M.Tech in Enterprise Business Analytics",
-    location: "Singapore",
-    body: "Pursuing graduate study in enterprise business analytics with a focus on AI, ML, and applied decision systems.",
-  },
-  {
-    marker: "2026",
-    period: "Jan 2026 - Present",
-    category: "Work Experience",
-    title: "Singapore General Hospital",
-    organisation: "AI/ML Intern",
-    location: "Singapore",
-    body: "Architecting LLM and RLHF-backed clinical risk decision systems while applying statistical models for proactive clinical incident management.",
-  },
-];
-
 const experience = [
   {
     role: "AI/ML Intern",
@@ -99,6 +33,15 @@ const experience = [
     ],
   },
   {
+    role: "Research Associate / Intern",
+    company: "IIT Delhi, MISN Lab",
+    period: "Jul 2024 - Dec 2024",
+    location: "Delhi, India",
+    highlights: [
+      "Researched hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
+    ],
+  },
+  {
     role: "Senior Data Scientist, Associate Manager",
     company: "Tredence Inc.",
     period: "Mar 2020 - Aug 2025",
@@ -106,15 +49,6 @@ const experience = [
     highlights: [
       "Led enterprise AI systems across knowledge management, data modelling, and customer intelligence.",
       "Worked with delivery and product teams to convert emerging AI capabilities into reusable accelerators.",
-    ],
-  },
-  {
-    role: "Research Associate / Intern",
-    company: "IIT Delhi, MISN Lab",
-    period: "Jul 2024 - Dec 2024",
-    location: "Delhi, India",
-    highlights: [
-      "Researched hyperbolic graph machine learning and privacy-preserving distributed graph learning.",
     ],
   },
   {
@@ -253,7 +187,6 @@ export default function Home() {
         </a>
         <div className="nav-links">
           <a href="#about">About</a>
-          <a href="#story">Story</a>
           <a href="#experience">Experience</a>
           <a href="#work">Work</a>
           <a href="#research">Research</a>
@@ -321,34 +254,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="story" className="content-section story-section">
-        <div className="section-heading">
-          <p className="section-kicker">01 - Story</p>
-          <h2>A chronological path through education, work, and applied research.</h2>
-        </div>
-        <div className="story-layout">
-          <div className="timeline">
-            {timeline.map((item) => (
-              <article className="timeline-item" key={`${item.period}-${item.title}`}>
-                <div className="timeline-marker" aria-hidden="true">{item.marker}</div>
-                <div className="timeline-content">
-                  <div className="timeline-meta">
-                    <span>{item.period}</span>
-                    <span>{item.category}</span>
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p className="timeline-org">{item.organisation} - {item.location}</p>
-                  <p>{item.body}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="experience" className="content-section">
         <div className="section-heading">
-          <p className="section-kicker">02 - Experience</p>
+          <p className="section-kicker">01 - Experience</p>
           <h2>Roles where I have made impact.</h2>
         </div>
         <div className="experience-list">
@@ -359,6 +267,7 @@ export default function Home() {
                 <h3>{job.role}</h3>
                 <strong>{job.company}</strong>
               </div>
+              <span className="experience-marker" aria-hidden="true" />
               <ul>
                 {job.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>
@@ -371,7 +280,7 @@ export default function Home() {
 
       <section id="work" className="content-section work-section">
         <div className="section-heading">
-          <p className="section-kicker">03 - Selected work</p>
+          <p className="section-kicker">02 - Selected work</p>
           <h2>Applied AI systems with measurable operating impact.</h2>
         </div>
         <div className="card-grid work-grid">
@@ -394,7 +303,7 @@ export default function Home() {
 
       <section id="research" className="content-section research-section">
         <div className="section-heading">
-          <p className="section-kicker">04 - Selected research</p>
+          <p className="section-kicker">03 - Selected research</p>
           <h2>Research threads across healthcare, language models, graphs, and statistical learning.</h2>
         </div>
         <div className="card-grid research-grid">
@@ -416,7 +325,7 @@ export default function Home() {
 
       <section id="skills" className="content-section skills-section">
         <div className="section-heading">
-          <p className="section-kicker">05 - Skills</p>
+          <p className="section-kicker">04 - Skills</p>
           <h2>What I bring to AI/ML delivery.</h2>
         </div>
         <div className="skills-grid">
@@ -435,7 +344,7 @@ export default function Home() {
 
       <section className="content-section credentials-section">
         <div className="section-heading">
-          <p className="section-kicker">06 - Recognition</p>
+          <p className="section-kicker">05 - Recognition</p>
           <h2>Delivery credibility, awards, and community leadership.</h2>
         </div>
         <article className="recognition-panel">
@@ -464,7 +373,7 @@ export default function Home() {
 
       <section id="contact" className="contact-section">
         <div>
-          <p className="section-kicker">07 - Connect</p>
+          <p className="section-kicker">06 - Connect</p>
           <h2>Let us talk about AI systems, analytics, research, or coffee.</h2>
           <p>
             Based in Singapore and currently pursuing M.Tech in Enterprise Business Analytics at NUS

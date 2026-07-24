@@ -46,17 +46,15 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /over 8 years of/);
   assert.match(html, /Fortune 500/);
   assert.match(html, /book cafe :D/);
+  assert.match(html, /01 - Experience/);
+  assert.match(html, /Roles where I have made impact/);
   assert.match(html, /Selected work/);
   assert.match(html, /Selected research/);
-  assert.match(html, /A chronological path through education, work, and applied research/);
-  assert.match(html, /Vellore Institute of Technology/);
   assert.match(html, /Wipro Technologies/);
   assert.match(html, /Tredence Inc/);
-  assert.match(html, /Indian School of Business/);
-  assert.match(html, /Indian Institute of Technology Delhi/);
-  assert.match(html, /Research Associate \/ Intern, MISN Lab/);
-  assert.match(html, /M\.Tech in Enterprise Business Analytics/);
+  assert.match(html, /IIT Delhi, MISN Lab/);
   assert.match(html, /Singapore General Hospital/);
+  assert.doesNotMatch(html, /01 - Story|A chronological path through education, work, and applied research/);
   assert.match(html, /Clinical Risk Decision Acceleration/);
   assert.match(html, /Occupational Burnout Estimation/);
   assert.match(html, /75%/);
@@ -67,9 +65,12 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.doesNotMatch(html, /Beyond work|Curious by habit/);
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/i);
 
-  assert.ok(html.indexOf("About me") < html.indexOf("01 - Story"));
+  assert.ok(html.indexOf("About me") < html.indexOf("01 - Experience"));
+  assert.ok(html.indexOf("Jan 2026 - Present") < html.indexOf("Jul 2024 - Dec 2024"));
+  assert.ok(html.indexOf("Jul 2024 - Dec 2024") < html.indexOf("Mar 2020 - Aug 2025"));
+  assert.ok(html.indexOf("Mar 2020 - Aug 2025") < html.indexOf("Aug 2018 - Feb 2021"));
   assert.ok(html.indexOf("Impact metrics") > html.indexOf("Awards and organisations"));
-  assert.ok(html.indexOf("Impact metrics") < html.indexOf("07 - Connect"));
+  assert.ok(html.indexOf("Impact metrics") < html.indexOf("06 - Connect"));
 });
 
 test("keeps portfolio assets and removes starter preview scaffolding", async () => {
@@ -88,10 +89,8 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.doesNotMatch(page, /Building enterprise and healthcare AI systems that move from research to measurable impact/);
   assert.doesNotMatch(page, /hero-lede|beyond-section|Beyond work|portrait-caption/);
   assert.match(page, /portrait-frame/);
-  assert.match(page, /story-layout/);
-  assert.match(page, /timeline-meta/);
-  assert.match(page, /timeline-org/);
-  assert.doesNotMatch(page, /story-education|Academic path behind the work/);
+  assert.match(page, /experience-marker/);
+  assert.doesNotMatch(page, /story-layout|timeline-meta|timeline-org|story-education|Academic path behind the work/);
   assert.match(page, /proof-status/);
   assert.doesNotMatch(page, /signal-panel|system-map|map-node|Decision system/);
   assert.match(layout, /openGraph:/);
