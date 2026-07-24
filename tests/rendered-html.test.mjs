@@ -56,7 +56,17 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /Singapore General Hospital/);
   assert.doesNotMatch(html, /01 - Story|A chronological path through education, work, and applied research/);
   assert.match(html, /Clinical Risk Decision Acceleration/);
+  assert.match(html, /TReK Knowledge Management System/);
+  assert.match(html, /actionable brain for teams/);
+  assert.match(html, /Customer Cosmos/);
+  assert.match(html, /customer 360 feature layer/);
   assert.match(html, /Occupational Burnout Estimation/);
+  assert.match(html, /exhaustion, depersonalisation, and personal growth/);
+  assert.match(html, /Biological Age Modelling/);
+  assert.match(html, /Horvath, Hannum, and GrimAge/);
+  assert.match(html, /linkedin\.com\/posts\/tredence_built-at-tredence/);
+  assert.match(html, /tredence\.com\/solutions\/customer-cosmos/);
+  assert.match(html, /isb\.edu\/faculty-and-research/);
   assert.match(html, /75%/);
   assert.match(html, /100%/);
   assert.match(html, /90%/);
@@ -83,6 +93,7 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
 
   assert.match(page, /const selectedWork = \[/);
   assert.match(page, /const selectedResearch = \[/);
+  assert.match(page, /proofHref/);
   assert.match(page, /hero-quote/);
   assert.match(page, /about-section/);
   assert.match(page, /bottom-metrics/);

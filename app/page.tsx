@@ -74,12 +74,13 @@ const selectedWork = [
   },
   {
     label: "Enterprise Knowledge",
-    title: "Knowledge Management System",
+    title: "TReK Knowledge Management System",
     context:
-      "An enterprise search and retrieval system built over a large corpus of corporate assets.",
+      "An agentic AI-powered knowledge platform that turns scattered enterprise documents into a searchable, actionable brain for teams.",
     methods: ["Agentic AI", "Multi-modal RAG", "LLMs", "Enterprise search"],
     outcome: "Reduced internal information search times by 90% across 75,000+ assets and 4,000+ employees.",
-    proof: "Resume-backed - link to be supplied",
+    proof: "Tredence Built at Tredence post",
+    proofHref: "https://www.linkedin.com/posts/tredence_built-at-tredence-activity-7412803390642188288-4sNq/",
   },
   {
     label: "Autonomous Data Modelling",
@@ -94,10 +95,11 @@ const selectedWork = [
     label: "Customer Intelligence",
     title: "Customer Cosmos",
     context:
-      "An end-to-end customer 360 accelerator deployed across large consumer and retail use cases.",
-    methods: ["Customer 360", "Segmentation", "Marketing analytics", "ML delivery"],
-    outcome: "Optimized over $3B in marketing spend and re-engaged 25M+ at-risk customers.",
-    proof: "Resume-backed - link to be supplied",
+      "An end-to-end customer intelligence solution that harmonizes omnichannel data into a customer 360 feature layer for personalization and activation.",
+    methods: ["Customer 360", "CLTV", "Propensity models", "CX personalization"],
+    outcome: "Optimized over $3B in marketing spend, re-engaged 25M+ at-risk customers, and supported richer customer lifetime value decisions.",
+    proof: "Tredence Customer Cosmos solution",
+    proofHref: "https://www.tredence.com/solutions/customer-cosmos",
   },
 ];
 
@@ -105,16 +107,17 @@ const selectedResearch = [
   {
     type: "Award-winning capstone",
     title: "Occupational Burnout Estimation",
-    body: "Used health, engagement, vocal biomarkers, and textual feedback data to cluster employees and estimate occupational burnout.",
-    tags: ["NLP", "Factor analysis", "Healthcare analytics"],
-    proof: "Best Capstone Award - link to be supplied",
+    body: "Built a multi-dimensional burnout lens using structured employee ratings and unstructured feedback, mapping latent factors such as exhaustion, depersonalisation, and personal growth into actionable workforce segments.",
+    tags: ["Factor analysis", "K-means", "NLP", "Random Forest"],
+    proof: "ISB research profile + EBA5002 report",
+    proofHref: "https://www.isb.edu/faculty-and-research/isb-institute-of-data-science/research/using-a-combination-of-multiple-facets-of-health-engagement-and-productivity-to-estimate-occupational-burnout",
   },
   {
     type: "Academic project",
     title: "Biological Age Modelling",
-    body: "Applied regularization, dimensionality reduction, and advanced learning techniques to high-dimensional DNA methylation data.",
-    tags: ["High-dimensional modelling", "p >> n", "Interpretability"],
-    proof: "Project detail pending",
+    body: "Built NovaGene, a cloud-native epigenomic analytics platform that ingests PGP UK IDAT files, processes 485,512 CpG methylation sites per sample, and computes Horvath, Hannum, and GrimAge biological-age signals.",
+    tags: ["DNA methylation", "Elastic Net", "Azure Data Factory", "PySpark"],
+    proof: "NUS NovaGene project report",
   },
   {
     type: "Research internship",
@@ -294,7 +297,15 @@ export default function Home() {
                 ))}
               </div>
               <p className="outcome">{work.outcome}</p>
-              <p className="proof-status">{work.proof}</p>
+              <p className="proof-status">
+                {work.proofHref ? (
+                  <a href={work.proofHref} target="_blank" rel="noreferrer">
+                    {work.proof}
+                  </a>
+                ) : (
+                  work.proof
+                )}
+              </p>
             </article>
           ))}
         </div>
@@ -316,7 +327,15 @@ export default function Home() {
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
-              <p className="proof-status">{research.proof}</p>
+              <p className="proof-status">
+                {research.proofHref ? (
+                  <a href={research.proofHref} target="_blank" rel="noreferrer">
+                    {research.proof}
+                  </a>
+                ) : (
+                  research.proof
+                )}
+              </p>
             </article>
           ))}
         </div>

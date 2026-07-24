@@ -534,6 +534,18 @@ h3 {
   color: var(--gold);
 }
 
+.proof-status a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.proof-status a:hover,
+.proof-status a:focus-visible {
+  color: var(--coral);
+  outline: none;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
