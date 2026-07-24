@@ -79,8 +79,9 @@ const selectedWork = [
       "An agentic AI-powered knowledge platform that turns scattered enterprise documents into a searchable, actionable brain for teams.",
     methods: ["Agentic AI", "Multi-modal RAG", "LLMs", "Enterprise search"],
     outcome: "Reduced internal information search times by 90% across 75,000+ assets and 4,000+ employees.",
-    proof: "Tredence Built at Tredence post",
+    proof: "Read 3-5 min case study",
     proofHref: "https://www.linkedin.com/posts/tredence_built-at-tredence-activity-7412803390642188288-4sNq/",
+    caseStudyHref: "/case-studies/trek-knowledge-management-system",
   },
   {
     label: "Autonomous Data Modelling",
@@ -98,8 +99,9 @@ const selectedWork = [
       "An end-to-end customer intelligence solution that harmonizes omnichannel data into a customer 360 feature layer for personalization and activation.",
     methods: ["Customer 360", "CLTV", "Propensity models", "CX personalization"],
     outcome: "Optimized over $3B in marketing spend, re-engaged 25M+ at-risk customers, and supported richer customer lifetime value decisions.",
-    proof: "Tredence Customer Cosmos solution",
+    proof: "Read 3-5 min case study",
     proofHref: "https://www.tredence.com/solutions/customer-cosmos",
+    caseStudyHref: "/case-studies/customer-cosmos",
   },
 ];
 
@@ -109,15 +111,17 @@ const selectedResearch = [
     title: "Occupational Burnout Estimation",
     body: "Built a multi-dimensional burnout lens using structured employee ratings and unstructured feedback, mapping latent factors such as exhaustion, depersonalisation, and personal growth into actionable workforce segments.",
     tags: ["Factor analysis", "K-means", "NLP", "Random Forest"],
-    proof: "ISB research profile + EBA5002 report",
+    proof: "Read 3-5 min research note",
     proofHref: "https://www.isb.edu/faculty-and-research/isb-institute-of-data-science/research/using-a-combination-of-multiple-facets-of-health-engagement-and-productivity-to-estimate-occupational-burnout",
+    caseStudyHref: "/case-studies/occupational-burnout-estimation",
   },
   {
     type: "Academic project",
     title: "Biological Age Modelling",
     body: "Built NovaGene, a cloud-native epigenomic analytics platform that ingests PGP UK IDAT files, processes 485,512 CpG methylation sites per sample, and computes Horvath, Hannum, and GrimAge biological-age signals.",
     tags: ["DNA methylation", "Elastic Net", "Azure Data Factory", "PySpark"],
-    proof: "NUS NovaGene project report",
+    proof: "Read 3-5 min research note",
+    caseStudyHref: "/case-studies/biological-age-modelling-novagene",
   },
   {
     type: "Research internship",
@@ -289,7 +293,13 @@ export default function Home() {
           {selectedWork.map((work) => (
             <article className="feature-card" key={work.title}>
               <span className="card-label">{work.label}</span>
-              <h3>{work.title}</h3>
+              <h3>
+                {work.caseStudyHref ? (
+                  <a href={work.caseStudyHref}>{work.title}</a>
+                ) : (
+                  work.title
+                )}
+              </h3>
               <p>{work.context}</p>
               <div className="tag-row">
                 {work.methods.map((method) => (
@@ -298,8 +308,8 @@ export default function Home() {
               </div>
               <p className="outcome">{work.outcome}</p>
               <p className="proof-status">
-                {work.proofHref ? (
-                  <a href={work.proofHref} target="_blank" rel="noreferrer">
+                {work.caseStudyHref || work.proofHref ? (
+                  <a href={work.caseStudyHref ?? work.proofHref} target={work.caseStudyHref ? undefined : "_blank"} rel={work.caseStudyHref ? undefined : "noreferrer"}>
                     {work.proof}
                   </a>
                 ) : (
@@ -320,7 +330,13 @@ export default function Home() {
           {selectedResearch.map((research) => (
             <article className="research-card" key={research.title}>
               <span className="card-label">{research.type}</span>
-              <h3>{research.title}</h3>
+              <h3>
+                {research.caseStudyHref ? (
+                  <a href={research.caseStudyHref}>{research.title}</a>
+                ) : (
+                  research.title
+                )}
+              </h3>
               <p>{research.body}</p>
               <div className="tag-row">
                 {research.tags.map((tag) => (
@@ -328,8 +344,8 @@ export default function Home() {
                 ))}
               </div>
               <p className="proof-status">
-                {research.proofHref ? (
-                  <a href={research.proofHref} target="_blank" rel="noreferrer">
+                {research.caseStudyHref || research.proofHref ? (
+                  <a href={research.caseStudyHref ?? research.proofHref} target={research.caseStudyHref ? undefined : "_blank"} rel={research.caseStudyHref ? undefined : "noreferrer"}>
                     {research.proof}
                   </a>
                 ) : (

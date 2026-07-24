@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -64,9 +64,12 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /exhaustion, depersonalisation, and personal growth/);
   assert.match(html, /Biological Age Modelling/);
   assert.match(html, /Horvath, Hannum, and GrimAge/);
-  assert.match(html, /linkedin\.com\/posts\/tredence_built-at-tredence/);
-  assert.match(html, /tredence\.com\/solutions\/customer-cosmos/);
-  assert.match(html, /isb\.edu\/faculty-and-research/);
+  assert.match(html, /\/case-studies\/trek-knowledge-management-system/);
+  assert.match(html, /\/case-studies\/customer-cosmos/);
+  assert.match(html, /\/case-studies\/occupational-burnout-estimation/);
+  assert.match(html, /\/case-studies\/biological-age-modelling-novagene/);
+  assert.match(html, /Read 3-5 min case study/);
+  assert.match(html, /Read 3-5 min research note/);
   assert.match(html, /75%/);
   assert.match(html, /100%/);
   assert.match(html, /90%/);
@@ -94,6 +97,7 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   assert.match(page, /const selectedWork = \[/);
   assert.match(page, /const selectedResearch = \[/);
   assert.match(page, /proofHref/);
+  assert.match(page, /caseStudyHref/);
   assert.match(page, /hero-quote/);
   assert.match(page, /about-section/);
   assert.match(page, /bottom-metrics/);
@@ -113,9 +117,41 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
   await access(new URL("../public/og.png", import.meta.url));
   await access(new URL("../public/images/anuraag-hero.jpeg", import.meta.url));
   await access(new URL("../public/files/anuraag-bhavaraju-resume.pdf", import.meta.url));
+  await access(new URL("../public/files/eba5002-occupational-burnout-final-report.pdf", import.meta.url));
+  await access(new URL("../public/files/eba5006-novagene-biological-age-report.pdf", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview/SkeletonPreview.tsx", import.meta.url)));
   await assert.rejects(access(new URL("../app/_sites-preview/preview.css", import.meta.url)));
 
   const previewFiles = await readdir(new URL("../app/_sites-preview", import.meta.url));
   assert.deepEqual(previewFiles, []);
+});
+
+test("renders internal case-study reads with full source links", async () => {
+  const routes = [
+    ["/case-studies/trek-knowledge-management-system", /Tredence GenAI healthcare and life sciences PoV mentioning TREK/],
+    ["/case-studies/customer-cosmos", /Tredence Customer Cosmos solution page/],
+    ["/case-studies/occupational-burnout-estimation", /Full EBA5002 final report/],
+    ["/case-studies/biological-age-modelling-novagene", /Full NovaGene project report/],
+  ];
+
+  for (const [route, sourcePattern] of routes) {
+    const response = await render(route);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+
+    assert.match(html, /3-5 min read/);
+    assert.match(html, /Further Reading/);
+    assert.match(html, /Back To Portfolio/);
+    assert.match(html, sourcePattern);
+  }
+
+  const burnout = await (await render("/case-studies/occupational-burnout-estimation")).text();
+  assert.match(burnout, /97k employee reviews/);
+  assert.match(burnout, /eba5002-occupational-burnout-final-report\.pdf/);
+  assert.match(burnout, /isb\.edu\/faculty-and-research/);
+
+  const novagene = await (await render("/case-studies/biological-age-modelling-novagene")).text();
+  assert.match(novagene, /11,652,288 CpG methylation measurements/);
+  assert.match(novagene, /eba5006-novagene-biological-age-report\.pdf/);
+  assert.match(novagene, /github\.com\/AyaanIrfanNUS\/novagene-epigenetic-dashboard/);
 });
