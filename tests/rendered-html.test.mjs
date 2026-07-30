@@ -64,10 +64,10 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.match(html, /exhaustion, depersonalisation, and personal growth/);
   assert.match(html, /Biological Age Modelling/);
   assert.match(html, /Horvath, Hannum, and GrimAge/);
-  assert.match(html, /\/case-studies\/trek-knowledge-management-system/);
-  assert.match(html, /\/case-studies\/customer-cosmos/);
-  assert.match(html, /\/case-studies\/occupational-burnout-estimation/);
-  assert.match(html, /\/case-studies\/biological-age-modelling-novagene/);
+  assert.match(html, /\/case-studies\/trek-knowledge-management-system\//);
+  assert.match(html, /\/case-studies\/customer-cosmos\//);
+  assert.match(html, /\/case-studies\/occupational-burnout-estimation\//);
+  assert.match(html, /\/case-studies\/biological-age-modelling-novagene\//);
   assert.match(html, /Read 3-5 min case study/);
   assert.match(html, /Read 3-5 min research note/);
   assert.match(html, /75%/);
@@ -83,7 +83,7 @@ test("server-renders the AI portfolio homepage", async () => {
   assert.ok(html.indexOf("Mar 2020 - Aug 2025") < html.indexOf("Aug 2018 - Feb 2021"));
   assert.ok(html.indexOf("Senior Data Scientist") < html.indexOf("Research Associate"));
   assert.ok(html.indexOf("Research Associate") < html.indexOf("Project Engineer"));
-  assert.ok(html.indexOf("Impact metrics") > html.indexOf("Awards and organisations"));
+  assert.ok(html.indexOf("Impact metrics") > html.indexOf("Awards, communities"));
   assert.ok(html.indexOf("Impact metrics") < html.indexOf("06 - Connect"));
 });
 
@@ -128,10 +128,10 @@ test("keeps portfolio assets and removes starter preview scaffolding", async () 
 
 test("renders internal case-study reads with full source links", async () => {
   const routes = [
-    ["/case-studies/trek-knowledge-management-system", /Tredence GenAI healthcare and life sciences PoV mentioning TREK/],
-    ["/case-studies/customer-cosmos", /Tredence Customer Cosmos solution page/],
-    ["/case-studies/occupational-burnout-estimation", /Full EBA5002 final report/],
-    ["/case-studies/biological-age-modelling-novagene", /Full NovaGene project report/],
+    ["/case-studies/trek-knowledge-management-system/", /Tredence GenAI healthcare and life sciences PoV mentioning TREK/],
+    ["/case-studies/customer-cosmos/", /Tredence Customer Cosmos solution page/],
+    ["/case-studies/occupational-burnout-estimation/", /Full EBA5002 final report/],
+    ["/case-studies/biological-age-modelling-novagene/", /Full NovaGene project report/],
   ];
 
   for (const [route, sourcePattern] of routes) {
@@ -145,12 +145,12 @@ test("renders internal case-study reads with full source links", async () => {
     assert.match(html, sourcePattern);
   }
 
-  const burnout = await (await render("/case-studies/occupational-burnout-estimation")).text();
+  const burnout = await (await render("/case-studies/occupational-burnout-estimation/")).text();
   assert.match(burnout, /97k employee reviews/);
   assert.match(burnout, /eba5002-occupational-burnout-final-report\.pdf/);
   assert.match(burnout, /isb\.edu\/faculty-and-research/);
 
-  const novagene = await (await render("/case-studies/biological-age-modelling-novagene")).text();
+  const novagene = await (await render("/case-studies/biological-age-modelling-novagene/")).text();
   assert.match(novagene, /11,652,288 CpG methylation measurements/);
   assert.match(novagene, /eba5006-novagene-biological-age-report\.pdf/);
   assert.match(novagene, /github\.com\/AyaanIrfanNUS\/novagene-epigenetic-dashboard/);

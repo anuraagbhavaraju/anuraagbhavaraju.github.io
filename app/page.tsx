@@ -38,7 +38,7 @@ const experience = [
     period: "Mar 2020 - Aug 2025",
     location: "Bengaluru, India",
     highlights: [
-      "Led enterprise AI systems across knowledge management, data modelling, and customer intelligence.",
+      "Led enterprise AI systems across knowledge management and customer intelligence.",
       "Worked with delivery and product teams to convert emerging AI capabilities into reusable accelerators.",
     ],
   },
@@ -81,16 +81,7 @@ const selectedWork = [
     outcome: "Reduced internal information search times by 90% across 75,000+ assets and 4,000+ employees.",
     proof: "Read 3-5 min case study",
     proofHref: "https://www.linkedin.com/posts/tredence_built-at-tredence-activity-7412803390642188288-4sNq/",
-    caseStudyHref: "/case-studies/trek-knowledge-management-system",
-  },
-  {
-    label: "Autonomous Data Modelling",
-    title: "Artificial Data Modeller",
-    context:
-      "A fully autonomous modelling accelerator designed to compress data engineering development cycles.",
-    methods: ["LLM fine-tuning", "Model Context Protocol", "Data engineering", "Automation"],
-    outcome: "Boosted productivity by 50%, compressing project cycles from 16 weeks to 8 weeks.",
-    proof: "Resume-backed - link to be supplied",
+    caseStudyHref: "/case-studies/trek-knowledge-management-system/",
   },
   {
     label: "Customer Intelligence",
@@ -101,7 +92,7 @@ const selectedWork = [
     outcome: "Optimized over $3B in marketing spend, re-engaged 25M+ at-risk customers, and supported richer customer lifetime value decisions.",
     proof: "Read 3-5 min case study",
     proofHref: "https://www.tredence.com/solutions/customer-cosmos",
-    caseStudyHref: "/case-studies/customer-cosmos",
+    caseStudyHref: "/case-studies/customer-cosmos/",
   },
 ];
 
@@ -113,7 +104,7 @@ const selectedResearch = [
     tags: ["Factor analysis", "K-means", "NLP", "Random Forest"],
     proof: "Read 3-5 min research note",
     proofHref: "https://www.isb.edu/faculty-and-research/isb-institute-of-data-science/research/using-a-combination-of-multiple-facets-of-health-engagement-and-productivity-to-estimate-occupational-burnout",
-    caseStudyHref: "/case-studies/occupational-burnout-estimation",
+    caseStudyHref: "/case-studies/occupational-burnout-estimation/",
   },
   {
     type: "Academic project",
@@ -121,7 +112,7 @@ const selectedResearch = [
     body: "Built NovaGene, a cloud-native epigenomic analytics platform that ingests PGP UK IDAT files, processes 485,512 CpG methylation sites per sample, and computes Horvath, Hannum, and GrimAge biological-age signals.",
     tags: ["DNA methylation", "Elastic Net", "Azure Data Factory", "PySpark"],
     proof: "Read 3-5 min research note",
-    caseStudyHref: "/case-studies/biological-age-modelling-novagene",
+    caseStudyHref: "/case-studies/biological-age-modelling-novagene/",
   },
   {
     type: "Research internship",
@@ -177,12 +168,42 @@ const skillGroups = [
 ];
 
 const recognition = [
-  "Winner - Best Innovation, MIT Hacking Medicine",
-  "Best Capstone Project, Indian School of Business",
-  "Luminous Award - Best Recruit, Wipro Technologies",
-  "Organiser and Advisor, TEDxVITVellore",
-  "Teacher and mentor, Make A Difference",
-  "Toastmasters: Competent Communication, Competent Leader, Advanced Leadership Bronze",
+  {
+    category: "Innovation",
+    title: "Best Innovation",
+    source: "MIT Hacking Medicine",
+    detail: "Recognised for building in a high-pressure healthcare innovation setting.",
+  },
+  {
+    category: "Research",
+    title: "Best Capstone Project",
+    source: "Indian School of Business",
+    detail: "Awarded for the occupational burnout estimation research project.",
+  },
+  {
+    category: "Early Career",
+    title: "Luminous Award",
+    source: "Wipro Technologies",
+    detail: "Named Best Recruit for delivery impact and early professional performance.",
+  },
+  {
+    category: "Community",
+    title: "TEDxVITVellore",
+    source: "Organiser and Advisor",
+    detail: "Helped shape an ideas platform across programming, speaker curation, and team leadership.",
+  },
+  {
+    category: "Mentorship",
+    title: "Make A Difference",
+    source: "Teacher and mentor",
+    detail: "Worked with students through volunteer teaching and mentoring.",
+  },
+  {
+    category: "Leadership",
+    title: "Toastmasters",
+    source: "CC, CL, Advanced Leadership Bronze",
+    detail: "Built structured communication, facilitation, and leadership practice.",
+  },
 ];
 
 export default function Home() {
@@ -382,12 +403,23 @@ export default function Home() {
           <h2>Delivery credibility, awards, and community leadership.</h2>
         </div>
         <article className="recognition-panel">
-          <h3>Awards and organisations</h3>
-          <ul>
+          <div className="recognition-intro">
+            <h3>Awards, communities, and signals beyond the job title.</h3>
+            <p>
+              A mix of innovation rooms, research recognition, early-career delivery, public speaking,
+              and long-running community work.
+            </p>
+          </div>
+          <div className="recognition-grid" aria-label="Awards and community recognition">
             {recognition.map((item) => (
-              <li key={item}>{item}</li>
+              <article className="recognition-card" key={`${item.category}-${item.title}`}>
+                <span>{item.category}</span>
+                <h4>{item.title}</h4>
+                <strong>{item.source}</strong>
+                <p>{item.detail}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </article>
       </section>
 

@@ -48,19 +48,6 @@ export const caseStudies: CaseStudy[] = [
           "The resume-backed metrics are the clearest impact signal: the system ingested 75,000+ corporate assets and reached 4,000+ employees, reducing internal search time by 90%. That is not just a better interface. It is a shift from manual knowledge hunting to intelligent self-service, with enough scale to change daily work habits across an organization.",
         ],
       },
-      {
-        heading: "My Role And Methods",
-        body: [
-          "My contribution sits at the intersection of data science leadership, retrieval design, and enterprise AI delivery. The project required thinking through how to structure a knowledge corpus, how to make retrieval useful for heterogeneous assets, and how to build confidence in generated answers. In this kind of system, the model is only one part of the product. The more important design questions are: what should be retrieved, how should it be ranked, how should context be assembled, and how should the user know whether the answer is safe to use?",
-          "The methods are therefore a blend of multi-modal RAG, enterprise search, LLM-based answer generation, and productized analytics delivery. Agentic AI appears in the workflow layer: decomposing a user request, selecting the right retrieval path, synthesizing concise responses, and helping users move from question to reusable artifact faster.",
-        ],
-      },
-      {
-        heading: "What A Reader Should Take Away",
-        body: [
-          "TReK is a good selected-work story because it shows applied AI beyond a prototype. It has a clear user pain, a real enterprise corpus, measurable adoption, and a business outcome that people can immediately understand: less time searching, more time building. It also signals practical AI maturity: the ability to connect LLMs with messy organizational data and deliver a system that employees actually use.",
-        ],
-      },
     ],
     sourceLinks: [
       {
@@ -104,16 +91,11 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
       {
-        heading: "My Role And Methods",
+        heading: "How I Worked On It",
         body: [
-          "My resume positions this as a senior data science delivery story: leading data scientists to deploy an end-to-end customer 360 accelerator across Fortune 500 client contexts. The technical surface includes segmentation, propensity modeling, customer lifetime value estimation, marketing analytics, and reusable delivery assets that make client implementations faster and more consistent.",
-          "The work is useful on the portfolio because it shows enterprise ML at commercial scale. It is not a single model in isolation; it is a multi-model customer intelligence system tied to decisions. The business metrics are strong and externally aligned: over $3B in marketing spend optimized, 25M+ at-risk customers re-engaged, and nearly $300 increase in customer lifetime value per household reported on the public solution page.",
-        ],
-      },
-      {
-        heading: "What A Reader Should Take Away",
-        body: [
-          "Customer Cosmos is the selected-work card that proves breadth: data engineering, ML, analytics translation, and business impact. It shows that I can work on customer intelligence problems where model quality matters, but so do stakeholder adoption, feature design, activation pathways, and measurable commercial outcomes.",
+          "I worked on Customer Cosmos as a senior data science delivery problem, not as a one-off modelling exercise. The work meant leading data scientists through client implementations where the same accelerator had to adapt to different customer data realities, commercial priorities, and activation channels. The technical surface included segmentation, propensity modelling, customer lifetime value estimation, marketing analytics, and reusable delivery assets that made implementations faster and more consistent.",
+          "What I like about this work is that the ML is tied very directly to decisions. A propensity score, CLTV estimate, or customer attribute is only useful if a marketer, category lead, loyalty team, or executive can act on it. Customer Cosmos connected those model outputs to the operating questions businesses actually ask: who is at risk, who has room to grow, what message should go next, and where marketing spend is being wasted.",
+          "The scale is the proof point. The public solution page reports over $3B in marketing spend optimized, 25M+ at-risk customers re-engaged, and nearly $300 increase in customer lifetime value per household. For me, that makes it a strong example of enterprise ML working as a decision layer rather than a dashboard parked on the side.",
         ],
       },
     ],
@@ -159,12 +141,6 @@ export const caseStudies: CaseStudy[] = [
         body: [
           "The modelling was not only predictive; it was explanatory. The report describes OLS regression over latent factors with an R2 of 0.745, indicating that the psychological factors explained a large share of variance in employee satisfaction-related outcomes. The tree-based models helped identify interpretable drivers such as work-life balance, job satisfaction, management rating, and sentiment score.",
           "The NLP layer added texture that ratings alone cannot capture. VADER sentiment scoring helped separate positive and negative review corpora, while topic modelling surfaced themes that leaders could act on. This combination matters because burnout is both quantitative and narrative: numbers show the pattern, text explains the lived experience behind it.",
-        ],
-      },
-      {
-        heading: "What A Reader Should Take Away",
-        body: [
-          "This research card should communicate applied ML judgment: the ability to combine latent factor modelling, clustering, supervised learning, and NLP into a decision-support system for a human problem. It also shows the kind of applied research I enjoy most: translating messy behavioral signals into interpretable, actionable frameworks.",
         ],
       },
     ],
