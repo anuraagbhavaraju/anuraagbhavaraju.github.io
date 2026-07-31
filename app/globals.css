@@ -52,6 +52,13 @@ main {
   min-height: 100vh;
 }
 
+#top,
+.content-section,
+.metrics-band,
+.contact-section {
+  scroll-margin-top: 110px;
+}
+
 .site-nav {
   position: sticky;
   top: 0;
@@ -853,6 +860,13 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  #top,
+  .content-section,
+  .metrics-band,
+  .contact-section {
+    scroll-margin-top: 16px;
+  }
+
   .site-nav {
     position: static;
     align-items: flex-start;
